@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "sample.fullname" . }}
+  labels:
+    app: {{ include "sample.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: { app: {{ include "sample.name" . }} }
+  template:
+    metadata:
+      labels:
+        app: {{ include "sample.name" . }}
+    spec:
+      containers:
+        - name: app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports: [{ containerPort: 80 }]
+          envFrom:
+            - secretRef: { name: app-secret }

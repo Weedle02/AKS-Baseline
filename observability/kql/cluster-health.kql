@@ -1,0 +1,3 @@
+InsightsMetrics
+| where Name in ("cluster_total_nodes", "cluster_total_pods")
+| summarize avg(Val) by Name, bin(TimeGenerated, 5m)

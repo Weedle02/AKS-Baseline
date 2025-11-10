@@ -1,0 +1,3 @@
+InsightsMetrics
+| where Name == "request_duration_seconds"
+| summarize p95=percentile(Val, 95) by bin(TimeGenerated, 5m)
