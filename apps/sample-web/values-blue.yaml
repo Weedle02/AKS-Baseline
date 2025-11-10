@@ -1,0 +1,6 @@
+image:
+  tag: "{{PLACEHOLDER_SHA_OR_TAG}}"
+ingress:
+  annotations:
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "10"

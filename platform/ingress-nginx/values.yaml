@@ -1,0 +1,8 @@
+controller:
+  replicaCount: 2
+  service:
+    type: LoadBalancer
+  config:
+    proxy-body-size: "64m"
+    proxy-read-timeout: "120"
+    use-forwarded-headers: "true"
