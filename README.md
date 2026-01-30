@@ -9,16 +9,16 @@ This repo provisions and operates an **AKS** baseline with **ACR**, **Managed Id
 - GitHub Environments: `Staging`, `Production` with required reviewers
 
 ## Structure
-- `infra/terraform` — AKS, ACR, Key Vault, Log Analytics
-- `platform/` — Ingress NGINX values, CSI Secret Store
-- `apps/sample-web` — Helm chart + blue/green values
-- `observability/kql` — dashboards/queries
-- `runbooks/` — cutover & rollback
+- `infra/terraform`- AKS, ACR, Key Vault, Log Analytics
+- `platform/`- Ingress NGINX values, CSI Secret Store
+- `apps/sample-web`- Helm chart + blue/green values
+- `observability/kql`- dashboards/queries
+- `runbooks/`- cutover & rollback
 
 ## Workflows
-1. `infra-plan-apply.yml` — plan/apply infra to Staging → approve → Prod
-2. `build-and-push-image.yml` — build Docker, push to ACR
-3. `deploy-blue-green.yml` — deploy green, smoke test, approve cutover
+1. `infra-plan-apply.yml`- plan/apply infra to Staging → approve → Prod
+3. `build-and-push-image.yml`-  build Docker, push to ACR
+4. `deploy-blue-green.yml`- deploy green, smoke test, approve cutover
 
 ## Quickstart
 ```bash
