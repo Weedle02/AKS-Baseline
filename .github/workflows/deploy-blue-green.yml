@@ -37,7 +37,7 @@ jobs:
   cutover:
     needs: deploy-candidate
     runs-on: ubuntu-latest
-    environment: Production   # manual approval here
+    environment: Production
     steps:
       - uses: actions/checkout@v4
       - uses: azure/login@v2
